@@ -32,6 +32,13 @@ resource "aws_instance" "instance" {
   tags = {
     Name  =    "${var.component_name}-${var.env}"
   }
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
+    }
+  }
 }
 
 resource "null_resource" "ansible_playbook" {
@@ -43,7 +50,6 @@ resource "null_resource" "ansible_playbook" {
       host     = aws_instance.instance.private_ip
     }
     inline = [
-      "sudo labauto ansible",
       "ansible-pull -i localhost, -U https://github.com/Sarthak1207/Roboshop_Project_Sarthak/ roboshop-ansible/roboshop.yml -e env=${var.env} -e component=${var.component_name} -e vault_token=${var.vault_token}"
     ]
   }
