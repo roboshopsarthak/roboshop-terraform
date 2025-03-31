@@ -50,6 +50,9 @@ resource "aws_instance" "instance" {
 }
 
 resource "null_resource" "ansible_playbook" {
+  triggers = {
+    instance_ids = aws_instance.instance.id
+  }
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
