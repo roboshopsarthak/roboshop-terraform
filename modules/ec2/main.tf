@@ -39,6 +39,9 @@ resource "aws_instance" "instance" {
       spot_instance_type = "persistent"
     }
   }
+  root_block_device {
+    volume_size = var.volume_size
+  }
 }
 
 resource "null_resource" "ansible_playbook" {
