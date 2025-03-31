@@ -33,7 +33,7 @@ app_instances   = {
     catalogue    = {
         app_port    =   8080
         instance_type   =   "t2.micro"
-        volume_size = 30
+        volume_size = 32
     }
 
     cart    = {
