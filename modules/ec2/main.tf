@@ -50,7 +50,7 @@ resource "null_resource" "ansible_playbook" {
       host     = aws_instance.instance.private_ip
     }
     inline = [
-      "ansible-pull -i localhost, -U https://github.com/roboshopsarthak/ roboshop-ansible/roboshop.yml -e env=${var.env} -e component=${var.component_name} -e vault_token=${var.vault_token}"
+      "ansible-pull -i localhost, -U https://github.com/roboshopsarthak/roboshop-ansible.git roboshop.yml -e env=${var.env} -e component=${var.component_name} -e vault_token=${var.vault_token}"
     ]
   }
 }
