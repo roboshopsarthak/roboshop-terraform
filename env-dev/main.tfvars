@@ -79,5 +79,14 @@ eks = {
         vpc-cni = {}
         kube-proxy = {} 
         coredns ={}
-}
-}
+    }
+    node_groups = {
+        g1 = {    
+            desired_size = 1
+            max_size     = 2
+            min_size     = 1
+            capacity_type = "SPOT"
+            instance_type = "t2.micro"
+        }
+    }
+ }
