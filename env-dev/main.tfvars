@@ -78,7 +78,7 @@ eks = {
     addons = {
         vpc-cni = {}
         kube-proxy = {} 
-        coredns ={}
+        #coredns ={}
     }
     node_groups = {
         g1 = {    
