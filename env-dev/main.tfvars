@@ -80,3 +80,4 @@ eks = {
         kube-proxy = {} 
         core-dns ={}
 }
+}
