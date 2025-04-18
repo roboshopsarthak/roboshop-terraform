@@ -21,7 +21,7 @@ resource "aws_eks_node_group" "main" {
     node_role_arn   = aws_iam_role.eks-node-group-role.arn
     subnet_ids      = var.subnet_ids
     capacity_type = each.value["capacity_type"]
-    instance_types = each.value["instance_types"]
+    instance_types = each.value["instance_type"]
 
 
   scaling_config {
