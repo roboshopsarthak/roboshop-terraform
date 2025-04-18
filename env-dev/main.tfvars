@@ -75,5 +75,8 @@ eks = {
         "subnet-0933eff18629cdeea",
         "subnet-0446761dba9f2668f"
     ]
-    addons = ["vpc-cni", "kube-proxy", "core-dns"]
+    addons = {
+        vpc-cni = {}
+        kube-proxy = {} 
+        core-dns ={}
 }
