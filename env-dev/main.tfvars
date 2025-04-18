@@ -78,6 +78,6 @@ eks = {
     addons = {
         vpc-cni = {}
         kube-proxy = {} 
-        core-dns ={}
+        coredns ={}
 }
 }
