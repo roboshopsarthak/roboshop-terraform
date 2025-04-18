@@ -10,5 +10,5 @@ resource "aws_eks_addon" "addon_name" {
     for_each = var.addons
     addon_name   = each.key
     cluster_name = aws_eks_cluster.main.name
-    addon_version = data.aws_eks_addon_version.add-on-version.version
+    addon_version = data.aws_eks_addon_version.add-on-version[each.key].version
 }
