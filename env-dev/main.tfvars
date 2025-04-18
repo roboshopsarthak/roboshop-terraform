@@ -69,3 +69,10 @@ web_instances = {
         volume_size = 20
     }
 }
+
+eks = {
+    subnet_ids = [
+        "subnet-0933eff18629cdeea",
+        "subnet-0446761dba9f2668f"
+    ]
+}
