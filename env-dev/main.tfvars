@@ -86,7 +86,7 @@ eks = {
             max_size     = 2
             min_size     = 1
             capacity_type = "SPOT"
-            instance_type = "t2.micro"
+            instance_type = ["t2.micro"]
         }
     }
  }
